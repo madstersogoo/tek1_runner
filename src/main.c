@@ -5,6 +5,8 @@
  * runner game
  */
 
+#include"../lib/include/my.h"
+
 int main(int argc, char **argv)
 {
 	if (argc < 2)
