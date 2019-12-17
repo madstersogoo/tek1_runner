@@ -13,6 +13,7 @@ int my_put_nbr(int nb);
 int my_putstr(char const *str);
 char *my_strcpy(char *dest, char const *src);
 int my_strligne(char const *str);
-void argument(void);
+int argument(void);
+int help(void);
 
 #endif
