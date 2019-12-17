@@ -4,11 +4,17 @@ CC	= gcc
 
 RM	= rm -f
 
-SRCS	= ./main.c 
+SRCS	= ./lib/my_put_nbr.c \
+	  ./lib/my_putchar.c \
+	  ./lib/my_putstr.c \
+	  ./lib/my_strcpy.c \
+	  ./lib/my_strligne.c \
+	  ./src/error.c \
+	  ./src/main.c 
 
 OBJS	= $(SRCS:.c=.o)
 
-CFLAGS = -I 
+CFLAGS = -I ./lib/include/
 CFLAGS += -Wall -Wextra
 
 all: $(NAME)
