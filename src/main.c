@@ -17,4 +17,6 @@ int main(int argc, char **argv)
 		help();
 		return(84);
 	}
+	else
+		runner();
 }

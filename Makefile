@@ -1,6 +1,8 @@
 NAME	= my_runner
 
-CC	= gcc
+CC	= gcc 
+
+SFML	= -lcsfml-graphics -lcsfml-window -lcsfml-system 
 
 RM	= rm -f
 
@@ -10,7 +12,8 @@ SRCS	= ./lib/my_put_nbr.c \
 	  ./lib/my_strcpy.c \
 	  ./lib/my_strligne.c \
 	  ./src/error.c \
-	  ./src/main.c 
+	  ./src/main.c \
+	  ./src/runner.c 
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -20,7 +23,7 @@ CFLAGS += -Wall -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	 $(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+	 $(CC) $(OBJS) $(SFML) -o $(NAME) $(LDFLAGS)
 
 clean:
 	$(RM) $(OBJS)
