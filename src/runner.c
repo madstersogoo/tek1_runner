@@ -9,6 +9,7 @@
 #include<SFML/Window.h>
 #include<SFML/System.h>
 #include<SFML/Config.h>
+#include <SFML/Window/Export.h>
 
 int runner(void)
 {
@@ -87,8 +88,14 @@ int runner(void)
 
     while(sfRenderWindow_isOpen(window)){
         while(sfWindow_pollEvent(window, &event)){
-            if (event.type == sfEvtClosed)
+            if (event.type == sfEvtClosed || event.key.code == sfKeyEscape)
                 sfRenderWindow_close(window);
+            if (event.key.code == sfKeyUp)
+                    player.y = 800;
+            if (event.key.code == sfKeyRight)
+                    player.x = player.x + 10;
+            if (event.key.code == sfKeyLeft)
+                    player.x = player.x - 10;
         }
         parallax1.x = parallax1.x - 3;
         parallax2.x = parallax2.x - 2;
@@ -135,6 +142,8 @@ int runner(void)
             i = 0;
         sfRenderWindow_display(window);
         i++;
+        if (player.y != 900)
+                player.y = player.y + 1;
     }
     sfTexture_destroy(texture1);
     sfTexture_destroy(texture2);

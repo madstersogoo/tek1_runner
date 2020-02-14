@@ -2,7 +2,7 @@ NAME	= my_runner
 
 CC	= gcc 
 
-SFML	= -lcsfml-graphics -lcsfml-window -lcsfml-system 
+SFML	= -lcsfml-graphics -lcsfml-window -lcsfml-system
 
 RM	= rm -f
 
